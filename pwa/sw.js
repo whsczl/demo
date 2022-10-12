@@ -4,18 +4,18 @@ var pathname=location.pathname.substring(0,location.pathname.lastIndexOf("/"));
 var cacheList=[
   pathname+'/',
   pathname+'/index.html',
-    pathname+'/installed.html',
+  pathname+'/installed.html',
 
   pathname+'/main.css',
   pathname+'/icon.png'
 ]
-//self.addEventListener('install',e =>{
-//  e.waitUntil(
-//    caches.open(cacheStorageKey)
-//    .then(cache => cache.addAll(cacheList))
-//    .then(() => self.skipWaiting())
-//  )
-//})
+self.addEventListener('install',e =>{
+  e.waitUntil(
+    caches.open(cacheStorageKey)
+    .then(cache => cache.addAll(cacheList))
+    .then(() => self.skipWaiting())
+  )
+})
 
 //self.addEventListener('fetch',function(e){
 //  e.respondWith(
