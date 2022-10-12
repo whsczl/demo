@@ -12,14 +12,7 @@
   <span id="btnAdd">Install</span>
 </body>
 <script>
-    // 检测浏览器是否支持SW
-    if(navigator.serviceWorker != null){
-      navigator.serviceWorker.register('sw.js')
-      .then(function(registartion){
-        console.log('支持sw:',registartion.scope)
-      })
-    }
-    
+   
       let deferredPrompt;
 
      window.addEventListener('beforeinstallprompt', function(e) {
@@ -47,7 +40,14 @@
         });
     });
 
-   
+    // 检测浏览器是否支持SW
+    if(navigator.serviceWorker != null){
+      navigator.serviceWorker.register('sw.js')
+      .then(function(registartion){
+        console.log('支持sw:',registartion.scope)
+      })
+    }
+    
     
   /*  if(navigator.serviceWorker != null){
       navigator.serviceWorker.register('apps/app1/sw.js')
