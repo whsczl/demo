@@ -17,16 +17,16 @@ self.addEventListener('install',e =>{
   )
 })
 
-//self.addEventListener('fetch',function(e){
-//  e.respondWith(
-//    caches.match(e.request).then(function(response){
-//      if(response != null){
-//        return response
-//      }
-//      return fetch(e.request.url)
-//    })
-//  )
-//})
+self.addEventListener('fetch',function(e){
+  e.respondWith(
+    caches.match(e.request).then(function(response){
+      if(response != null){
+        return response
+      }
+      return fetch(e.request.url)
+    })
+  )
+})
 self.addEventListener('activate',function(e){
   e.waitUntil(
     //获取所有cache名称
