@@ -4,6 +4,8 @@ var pathname=location.pathname.substring(0,location.pathname.lastIndexOf("/"));
 var cacheList=[
   pathname+'/',
   pathname+'/index.html',
+    pathname+'/installed.html',
+
   pathname+'/main.css',
   pathname+'/icon.png'
 ]
