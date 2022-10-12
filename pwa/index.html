@@ -41,13 +41,20 @@
 
     // 检测浏览器是否支持SW
     if(navigator.serviceWorker != null){
-      navigator.serviceWorker.register('apps/app1/sw.js',{scope:'apps/app1/'})
+      navigator.serviceWorker.register('sw.js')
+      .then(function(registartion){
+        console.log('支持sw:',registartion.scope)
+      })
+    }
+    
+    if(navigator.serviceWorker != null){
+      navigator.serviceWorker.register('apps/app1/sw.js')
       .then(function(registartion){
         console.log('支持sw:',registartion.scope)
       })
     }
     if(navigator.serviceWorker != null){
-      navigator.serviceWorker.register('apps/app2/sw.js',{scope:'apps/app2/'})
+      navigator.serviceWorker.register('apps/app2/sw.js')
       .then(function(registartion){
         console.log('支持sw:',registartion.scope)
       })
